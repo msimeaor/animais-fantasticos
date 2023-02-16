@@ -84,6 +84,9 @@ body {
     overflow-y: scroll;
     grid-column: 2;
 }
+.animais-lista img:hover {
+    cursor: pointer;
+}
 .animais-lista::-webkit-scrollbar {
     width: 18px;
 }
