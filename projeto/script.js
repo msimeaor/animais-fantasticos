@@ -1,60 +1,64 @@
 var classeAtivo = 'ativo'
 
-function initTabNav() {
-  const listaAnimais = document.querySelectorAll('.js-tabmenu li')
-  const descricaoAnimais = document.querySelectorAll('.js-tabcontent section')
+function initAnimais() {
+  const listaImagensAnimais = document.querySelectorAll('.js-tabmenu li')
+  const listaSectionsDescricoes = document.querySelectorAll('.js-tabcontent section')
+  listaSectionsDescricoes[0].classList.add(classeAtivo)
 
-  if(listaAnimais.length && descricaoAnimais.length) {
-    descricaoAnimais[0].classList.add(classeAtivo)
+  adcEventNasImagensChamarInitAnimais()
 
-    function ativarSectionReferenteAoLi(index) {
-      descricaoAnimais.forEach(item => {
-        item.classList.remove(classeAtivo)
+  function adcEventNasImagensChamarInitAnimais() {
+    listaImagensAnimais.forEach((imagem, index) => {
+      imagem.addEventListener('click', function() {
+        ativarSection(index)
       })
+    })
+  }
 
-      descricaoAnimais[index].classList.add(classeAtivo)
-    }
+  function ativarSection(index) {
+    desativarTodasSections()
+    listaSectionsDescricoes[index].classList.add(classeAtivo)
+  }
 
-    listaAnimais.forEach((li, index) => {
-      li.addEventListener('click', function() {
-        ativarSectionReferenteAoLi(index)
-      })
+  function desativarTodasSections() {
+    listaSectionsDescricoes.forEach(section => {
+      section.classList.remove(classeAtivo)
     })
   }
 }
 
-function initAccordion() {
+function initFaq() {
   const perguntasFaq = document.querySelectorAll('.js-accordion dt')
 
-  if(perguntasFaq.length) {
-    function ativarPerguntaeResposta(event) {
-      this.classList.toggle(classeAtivo)
-      this.nextElementSibling.classList.toggle(classeAtivo)
-    }
-  
-    perguntasFaq.forEach(item => {
-      item.addEventListener('click', ativarPerguntaeResposta)
+  adcEventCLickNasPerguntas()
+
+  function adcEventCLickNasPerguntas() {
+    perguntasFaq.forEach(pergunta => {
+      pergunta.addEventListener('click', ativarOuDesativarPerguntaeResposta)
     })
   }
 
+  function ativarOuDesativarPerguntaeResposta(event) {
+    this.classList.toggle('ativo')
+    this.nextElementSibling.classList.toggle('ativo')
+  }
 }
 
 function initScroll() {
   const sections = document.querySelectorAll('.js-scroll')
   sections[0].classList.add(classeAtivo)
+  const $60porcentoHeightView = window.innerHeight * 0.6
 
-  const $60porCentoView = window.innerHeight * 0.6
+  window.addEventListener('scroll', medirSecTopEAtivar)
 
-  function atualizarSectionTopeAtivarSection(event) {
+  function medirSecTopEAtivar() {
     sections.forEach(section => {
       const sectionTop = section.getBoundingClientRect().top
 
-      if(sectionTop < $60porCentoView) {
+      if(sectionTop < $60porcentoHeightView) {
         section.classList.add(classeAtivo)
       }
 
     })
   }
-
-  window.addEventListener('scroll', atualizarSectionTopeAtivarSection)
 }
