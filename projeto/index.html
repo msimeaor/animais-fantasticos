@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="initTabNav(), initAccordion(), initScroll()">
     
     <nav class="menu">
         <ul>
@@ -21,66 +21,66 @@
         </ul>
     </nav>
 
-    <section class="grid-section animais" id="animais">
+    <section class="grid-section animais js-scroll" id="animais">
         <h1 class="titulo">Animais <br> Fantásticos</h1>
-        <ul class="animais-lista">
-            <l>
-                <img src="./img/imagem1.jpg"">
+        <ul class="animais-lista js-tabmenu">
+            <li>
+                <img src="./img/imagem1.jpg">
             </li>
             <li>
-                <img src="./img/imagem2.jpg"">
+                <img src="./img/imagem2.jpg">
             </li>
             <li>
-                <img src="./img/imagem3.jpg"">
+                <img src="./img/imagem3.jpg">
             </li>
             <li>
-                <img src="./img/imagem4.jpg"">
+                <img src="./img/imagem4.jpg">
             </li>
             <li>
-                <img src="./img/imagem5.jpg")">
+                <img src="./img/imagem5.jpg">
             </li>
             <li>
-                <img src="./img/imagem6.jpg"">
+                <img src="./img/imagem6.jpg">
             </li>
         </ul>
 
-        <div class="animais-descricao">
-            <section id="sec-raposa">
+        <div class="animais-descricao js-tabcontent">
+            <section>
                 <h2>Raposa</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repudiandae ullam molestias ex cumque reprehenderit consectetur facilis explicabo tempore exercitationem porro quasi vel </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae accusamus, error nostrum minus animi, nam voluptatum in reiciendis itaque doloremque culpa quasi hic repudiandae quis!</p>
             </section>
 
-            <section id="sec-esquilo">
-                <h2>Esquilo</h2>
+            <section>
+                <h2>Esquilo</h2> 
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam nam quae, quos doloreeee </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae accusamus, error nostrum minus animi, nam voluptatum in reiciendis itaque doloremque culpa quasi hic repudiandae quis!</p>
             </section>
 
-            <section id="sec-urso">
+            <section>
                 <h2>Urso</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus unde iure atque in </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae accusamus, error nostrum minus animi, nam voluptatum in reiciendis itaque doloremque culpa quasi hic repudiandae quis!</p>
             </section>
 
-            <section id="sec-lobo">
+            <section>
                 <h2>Lobo</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque possimus in iure saepe. Odio, delectus recusandae cupiditate blanditiis et porro voluptatem quos deserunt. </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae accusamus, error nostrum minus animi, nam voluptatum in reiciendis itaque doloremque culpa quasi hic repudiandae quis!</p>
             </section>
 
-            <section id="sec-macaco">
+            <section>
                 <h2>Macaco</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt numquam amet unde maxime fugiat voluptas, voluptatum iure quis culpa? Ullam quidem exercitationem alias </p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae accusamus, error nostrum minus animi, nam voluptatum in reiciendis itaque doloremque culpa quasi hic repudiandae quis!</p>
             </section>
 
-            <section id="sec-leao">
+            <section>
                 <h2>Leao</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem, dicta reprehenderit quod accusantium omnis obcaecati repellat soluta nemo explicabo facere commodi .</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore distinctio nostrum voluptas reprehenderit, quos eaque blanditiis autem aliquid id commodi, provident nam illo! Minus, earum!</p>
@@ -89,9 +89,9 @@
         </div>
     </section>
 
-    <section class="grid-section faq" id="faq">
+    <section class="grid-section faq js-scroll" id="faq">
         <h1 class="titulo">FAQ</h1>
-        <dl class="faq-lista">
+        <dl class="faq-lista js-accordion">
             <dt>Qual a idade dos animais?</dt>
             <dd>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi obcaecati, sit enim animi, quo cum quia, quis perferendis illo rem aspernatur laborum. Quam eveniet, maiores corrupti dolore fugiat voluptatem perferendis!</dd>
 
@@ -106,7 +106,7 @@
         </dl>
     </section>
 
-    <section class="grid-section contato" id="contato">
+    <section class="grid-section contato js-scroll" id="contato">
         <h1 class="titulo">Contato</h1>
         <div class="mapa">
             <img src="img/mapa.png">
@@ -124,7 +124,8 @@
         <p>Todos os direitos reservados</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="./treino/treino.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

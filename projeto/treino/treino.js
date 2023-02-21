@@ -1,4 +1,5 @@
 /*
+
 const menu = document.querySelector('.menu')
 
 menu.classList.add('cabecalho', 'main')
@@ -6,6 +7,7 @@ console.log(menu.className)
 
 menu.className += ' navegacao login-container'
 console.log(menu.classList)
+
 */
 
 /*
@@ -43,6 +45,7 @@ itensMenu[itensMenu.length - 1].setAttribute('target', '_blank')
 */
 
 /*
+
 const animaisLista = document.querySelector('.animais-lista')
 const heightImg = animaisLista.clientHeight
 const widthImg = animaisLista.clientWidth
@@ -64,9 +67,11 @@ if(dimensoesTela.matches) {
 } else {
     console.log('tela maior que 900px')
 }
+
 */
 
 /*
+
 window.onload = function() {
     const todasImagens = document.querySelectorAll('img')
 
@@ -87,9 +92,11 @@ if(widthSite.matches) {
     menu.className += ' menu-mobile'
     console.log(menu.classList)
 }
+
 */
 
 /*
+
 const allLinks = document.querySelectorAll('a')
 console.log(allLinks)
 
@@ -102,9 +109,11 @@ function handleLink(event) {
 }
 
 externalLink.addEventListener('click', handleLink)
+
 */
 
 /*
+
 const linksInternos = document.querySelectorAll('a[href^="#"]')
 
 function handleLink(event) {
@@ -120,9 +129,11 @@ function handleLink(event) {
 linksInternos.forEach(item => {
     item.addEventListener('click', handleLink)
 })
+
 */
 
 /*
+
 const todosElementosDoSite = document.querySelectorAll('body *')
 
 function removeItem(event) {
@@ -135,7 +146,10 @@ function removeItem(event) {
 todosElementosDoSite.forEach(item => {
     item.addEventListener('click', removeItem)
 })
+
 */
+
+/*
 
 function aumentarTexto(event) {
     
@@ -149,3 +163,61 @@ function aumentarTexto(event) {
 }
 
 window.addEventListener('keydown', aumentarTexto)
+
+*/
+
+/*
+
+const secEscquilo = document.querySelector('#sec-esquilo')
+const contatoLista = document.querySelector('.contato-lista')
+
+secEscquilo.insertBefore(contatoLista, secEscquilo.children[2])
+console.log(secEscquilo.children)
+
+secEscquilo.removeChild(contatoLista)
+
+*/
+
+/*
+
+const novoh1 = document.createElement('h1')
+const rodape = document.querySelector('.copy')
+const menu = document.querySelector('.menu')
+
+novoh1.innerHTML = 'Novo titulo'
+rodape.insertBefore(novoh1, rodape.children[0])
+
+const cloneH1 = novoh1.cloneNode(true)
+menu.appendChild(cloneH1)
+
+*/
+
+
+/* Exercicios
+
+const menu = document.querySelector('.menu')
+const copy = document.querySelector('.copy')
+
+const menuClone = menu.cloneNode(true)
+copy.appendChild(menuClone)
+
+*/
+
+/*
+
+const dlFaq = document.querySelector('.faq-lista')
+const primeiroFilhoDlFaq = dlFaq.children[0]
+const ddDoPrimeiroDl = primeiroFilhoDlFaq.nextElementSibling
+console.log(ddDoPrimeiroDl)
+
+*/
+
+/*
+
+const animais = document.querySelector('.animais')
+const faq = document.querySelector('.faq')
+
+faq.innerHTML = animais.innerHTML
+
+*/
+
