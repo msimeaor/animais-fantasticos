@@ -221,3 +221,190 @@ faq.innerHTML = animais.innerHTML
 
 */
 
+/*
+
+const GridSectionAnimais = {
+    h1Animais: '.animais h1.titulo', 
+    h1Element() {
+        return document.querySelector(this.h1Animais)
+    }, 
+    ulAnimais: '.animais ul.animais-lista', 
+    ulElement() {
+        return document.querySelector(this.ulAnimais)
+    }, 
+    divDescricoes: '.animais div.animais-descricao', 
+    divElement() {
+        return document.querySelector(this.divDescricoes)
+    }
+}
+
+const Menu = { 
+    ulMenu: '.menu ul' ,
+    ulElement() {
+        return document.querySelector(this.ulMenu)
+    }, 
+    ulLis: 'li', 
+    ulLisElement() {
+        return this.ulElement().querySelectorAll(this.ulLis)
+    }
+}
+
+console.log(GridSectionAnimais.h1Element())
+console.log(GridSectionAnimais.ulElement())
+console.log(GridSectionAnimais.divElement().children[3])
+
+console.log(Menu.ulLisElement())
+
+*/
+
+/*
+
+function Section(seletor) {
+    this.seletor = seletor
+    this.element = function() {
+        return document.querySelector(this.seletor)
+    }
+}
+function Ul(seletor) {
+    this.seletor = seletor
+    this.element = function() {
+        return document.querySelector(this.seletor)
+    }
+}
+function Imgs(seletor) {
+    this.seletor = seletor
+    this.element = function() {
+        return document.querySelectorAll(this.seletor)
+    }
+
+    this.ativar = function() {
+        this.element().forEach(item => {
+            item.classList.add('ativar')
+        })
+    }
+}
+
+const sectionsAnimais = new Section('.animais')
+console.log(sectionsAnimais.element())
+
+const sectionFaq = new Section('.faq')
+console.log(sectionFaq.element())
+
+const animaisLista = new Ul('.animais-lista')
+console.log(animaisLista.element())
+
+const imagensSectionAnimais = new Imgs(animaisLista.seletor + ' img')
+console.log(imagensSectionAnimais.element())
+imagensSectionAnimais.ativar()
+
+*/
+
+/* Exercicios */
+
+/*
+
+function Pessoa(nome, idade) {
+    this.nome = nome
+    this.idade = idade
+    this.andar = function() {
+        console.log(`${this.nome}, de ${this.idade} anos andou`)
+    }
+}
+
+const matheus = new Pessoa('Matheus', 20)
+matheus.andar()
+
+*/
+
+/*
+
+function Dom(seletor) {
+    this.seletor = seletor
+    this.pluralElement = function() {
+        return document.querySelectorAll(this.seletor)
+    }
+
+    this.addClass = function(classe) {
+        this.pluralElement().forEach(element => {
+            element.classList.add(classe)
+        })
+    }
+    this.removeClass = function(classe) {
+        this.pluralElement().forEach(element => {
+            element.classList.remove(classe)
+        })
+    }
+}
+
+const listaMenu = new Dom('.menu li')
+listaMenu.addClass('ativo')
+listaMenu.removeClass('ativo')
+
+*/
+
+/*
+
+function Pessoa(nome, sobrenome, idade) {
+    this.nome = nome
+    this.sobrenome = sobrenome
+    this.idade = idade
+}
+
+Pessoa.prototype.nomeCompleto = function() {
+    return `${this.nome} ${this.sobrenome}`
+}
+
+const matheus = new Pessoa('matheus', 'simeao', 20)
+console.log(matheus)
+
+*/
+
+/*
+
+const fruta = 'Banana'
+console.log(fruta.slice(0, 2))
+
+const frutas = 'banana, melancia, jabuticaba, abobrinha'
+console.log(frutas.slice(5, 15))
+
+*/
+
+/*
+
+const valores = [
+    {
+        descricao: 'Taxa do pao', 
+        valor: 'R$ 39' 
+    }, 
+    {
+        descricao: 'Taxa do Mercado', 
+        valor: 'R$ 129'
+    }, 
+    {
+        descricao: 'Recebimento do cliente', 
+        valor: 'R$ 99'
+    }, 
+    {
+        descricao: 'Taxa do banco', 
+        valor: 'R$ 129'
+    }, 
+    {
+        descricao: 'Recebimento do cliente', 
+        valor: 'R$ 49'
+    }
+]
+
+
+let somaTaxas = 0.0
+valores.forEach(item => {
+    
+    if(item.descricao.startsWith('Taxa')) {
+        let valorLimpo = item.valor.replace('R$ ', '')
+        somaTaxas += +valorLimpo
+    }
+
+})
+
+console.log(somaTaxas)
+
+*/
