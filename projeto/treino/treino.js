@@ -408,3 +408,208 @@ valores.forEach(item => {
 console.log(somaTaxas)
 
 */
+
+/*
+
+let numero = 497.99
+const numeroMoeda = numero.toLocaleString('eu-ES', {style: 'currency', currency: 'EUR'})
+console.log(numeroMoeda)
+
+const numero1 = (Math.random() * 500).toFixed(2)
+console.log(numero1)
+const numero1Float = Number.parseFloat(numero1).toLocaleString('pt-bt', {style: 'currency', currency: 'BRL'})
+console.log(numero1Float)
+
+*/
+
+/*
+let randomNumber = (1050 + Math.random() * (2000 - 1050)).toFixed(2)
+console.log(randomNumber)
+
+let numeros = '4, 5, 20, 27, 9'
+let arrayNumeros = numeros.split(', ')
+const numeroMaximo = Math.max(...arrayNumeros)
+console.log(numeroMaximo)
+*/
+
+/*
+
+const listaPrecos = ['R$ 59,99', ' R$ 100,222', 'R$ 230  ', 'r$  200']
+let somaNumeros = 0.0
+
+listaPrecos.forEach(item => {
+    let precoLimpo = item
+        .trim()
+        .toLowerCase()
+        .replace('r$ ', '')
+        .replace(' ', '')
+
+    let numerosComCentavos = Number.parseFloat(precoLimpo).toFixed(2)
+    somaNumeros += +numerosComCentavos
+})
+
+console.log(somaNumeros.toFixed(2))
+
+*/
+
+/* Exercicios
+const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão']
+
+const primeiraComida = comidas.shift() // .shift() remove o primeiro item e joga dentro da variavel
+const ultimaComida = comidas.pop() // .pop() remove o ultimo item e joga dentro da variavel
+comidas.push('arroz') // .push() adiciona item na ultima posicao do array
+comidas.unshift('peixe', 'batata') // .unshift() adiciona item na primeira posicao do array
+
+console.log(primeiraComida)
+console.log(comidas)
+
+*/
+
+/* Exercicios
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia']
+
+console.log(estudantes.sort())
+console.log(estudantes.reverse())
+console.log(estudantes.includes('Joana'))
+console.log(estudantes.includes('Juliana'))
+*/
+
+/*Exercicios
+const html = 
+    `<section>
+        <div>Sobre</div>
+        <div>Produtos</div>
+        <div>Contato</div>
+    </section>`
+
+const htmlSectionJoin = html.split('section').join('li')
+console.log(htmlSectionJoin)
+*/
+
+/* Exercicios
+const carros = ['Ford', 'Fiat', 'Volkswagem', 'Honda']
+const carrosBackup = carros.slice()
+
+carros.pop()
+console.log(carros)
+console.log(carrosBackup)
+*/
+
+/*
+const aulas = [
+    {
+        nome: 'HTML 1', 
+        min: 15
+    }, 
+    {
+        nome: 'HTML 2', 
+        min: 10
+    }, 
+    {
+        nome: 'CSS 1', 
+        min: 20
+    }, 
+    {
+        nome: 'JS 1', 
+        min: 25
+    }
+]
+
+let totMinutosAulas = 0
+const minutosAulas = aulas.map(obj => {
+    return obj.min
+}).map(min => {
+    totMinutosAulas += min
+})
+
+console.log(totMinutosAulas)
+*/
+
+/*
+const numeros = [1, 4, 6, 3, 4, 7, 2, 12]
+
+const maiorNumero = numeros.reduce((anterior, item) => {
+    
+    if(anterior < item)
+        return item
+    else
+        return anterior
+
+})
+
+console.log(maiorNumero)
+*/
+
+/* Exercicio
+const cursos = document.querySelectorAll('.curso')
+const arrayCursos = Array.from(cursos)
+
+const objCurso = arrayCursos.map((curso) => {
+
+    const titulo = curso.querySelector('h1').innerText
+    const descricao = curso.querySelector('p').innerText
+    const aulas = curso.querySelector('.aulas').innerText
+    const horas = curso.querySelector('.horas').innerText
+    
+    return {
+        titulo: titulo, 
+        descricao: descricao, 
+        aulas: aulas, 
+        horas: horas
+    }
+})
+*/
+
+/* Exercicio
+const numeros = [3, 44, 333, 23, 122, 322, 33]
+const numerosMaioresQue100 = numeros.filter(numero => {
+    return numero > 100
+})
+
+console.log(numerosMaioresQue100)
+*/
+
+/* Exercicio
+const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
+const possuiBaixo = instrumentos.some(instrumento => {
+    return instrumento == 'Baixo'
+})
+console.log(verificaBaixo)
+*/
+
+const compras = [
+    {
+        item: 'Banana', 
+        preco: 'R$ 4.99'
+    }, 
+    {
+        item: 'Ovo', 
+        preco: 'R$ 2,99'
+    }, 
+    {
+        item: 'Carne', 
+        preco: 'r$ 25,49'
+    }, 
+    {
+        item: 'Refrigerante', 
+        preco: 'R$ 5,35'
+    }, 
+    {
+        item: 'Queijo', 
+        preco: 'r$ 10,60'
+    }
+]
+
+let valorTotalCompras = compras.reduce((acumulador, objeto) => {
+    const valorRefatorado = objeto.preco
+        .toLowerCase()
+        .replace('r$ ', '')
+        .replace(',', '.')
+
+    const valorComDecimais = Number.parseFloat(valorRefatorado).toFixed(2)
+    const valorLimpo = Number.parseFloat(valorComDecimais)
+
+    return acumulador + valorLimpo
+}, 0)
+
+console.log(valorTotalCompras)
