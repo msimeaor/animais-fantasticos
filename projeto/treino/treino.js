@@ -577,6 +577,7 @@ const possuiBaixo = instrumentos.some(instrumento => {
 console.log(verificaBaixo)
 */
 
+/*
 const compras = [
     {
         item: 'Banana', 
@@ -613,3 +614,84 @@ let valorTotalCompras = compras.reduce((acumulador, objeto) => {
 }, 0)
 
 console.log(valorTotalCompras)
+*/
+
+/*
+function carro(velocidade) {
+    console.log(this.marca + ' ' + this.ano + ' ' + velocidade + 'km/h')
+}
+
+carro.call({marca: 'Honda', ano: 2010}, 125)
+*/
+
+/*
+function Dom(seletor) {
+    this.element = document.querySelector(seletor)
+}
+
+Dom.prototype.ativo = function(classe) {
+    this.element.classList.add(classe)
+}
+
+const li = new Dom('li')
+Dom.prototype.ativo.call(li, 'ativo')
+*/
+
+/*
+const nodeLi = document.querySelectorAll('li')
+
+const classeAtivo = Array.prototype.filter.call(nodeLi, item => {
+    return item.classList.contains('ativo')
+})
+console.log(classeAtivo)
+*/
+
+/*
+function Dom(seletor) {
+    this.element = document.querySelector(seletor)
+}
+
+const $ = document.querySelectorAll.bind(document)
+const li = $('li')
+
+console.log(li)
+*/
+
+/*
+const carro = {
+    marca: 'honda', 
+    ano: 2018, 
+    acelerar: function(tempo) {
+        console.log(`${this.marca} acelerou em ${tempo} segundos`)
+    }
+}
+
+const fiat = {
+    marca: 'fiat'
+}
+
+const acelerarFiat = carro.acelerar.bind(fiat)
+acelerarFiat(12.1)
+*/
+
+/*
+const html = document.querySelectorAll('p')
+
+const somaTotalCaracteres = Array.prototype.reduce.call(html, (acum, item) => {
+    return acum + item.innerText.length
+}, 0)
+
+console.log(somaTotalCaracteres)
+*/
+
+function criarElemento(tag, classe, conteudo) {
+    const elemento = document.createElement(tag)
+    elemento.classList.add(classe)
+    elemento.innerText = conteudo
+
+    return elemento
+}
+
+console.log(criarElemento('div', 'ativo', 'Conteudo da div'))
+const criadorh1 = criarElemento.bind(null, 'h1', 'titulo')
+console.log(criadorh1('Conteudo do h1'))
