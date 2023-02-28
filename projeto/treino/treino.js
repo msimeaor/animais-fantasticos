@@ -684,6 +684,7 @@ const somaTotalCaracteres = Array.prototype.reduce.call(html, (acum, item) => {
 console.log(somaTotalCaracteres)
 */
 
+/*
 function criarElemento(tag, classe, conteudo) {
     const elemento = document.createElement(tag)
     elemento.classList.add(classe)
@@ -695,3 +696,102 @@ function criarElemento(tag, classe, conteudo) {
 console.log(criarElemento('div', 'ativo', 'Conteudo da div'))
 const criadorh1 = criarElemento.bind(null, 'h1', 'titulo')
 console.log(criadorh1('Conteudo do h1'))
+*/
+
+/*
+const carro = {
+    init(marca) {
+        this.marca = marca
+        return this
+    },
+    acelerar() {
+        return `${this.marca} acelerou`
+    }
+}
+
+const honda = Object.create(carro).init('Honda')
+console.log(honda.acelerar())
+*/
+
+/*
+const automovel = {
+    acelerar() {
+        return `${this.marca} acelerou`
+    }, 
+    buzinar() {
+        return `${this.marca} buzinou`
+    }
+}
+
+const carro = {
+    marca: 'marca', 
+    rodas: 4
+}
+const moto = {
+    marca: 'marca', 
+    rodas: 2
+}
+
+const honda = Object.assign(carro, automovel)
+honda.marca = 'honda'
+console.log(honda.acelerar())
+
+const fazer600 = Object.assign(moto, automovel)
+fazer600.marca = 'fazer600'
+console.log(fazer600.buzinar())
+*/
+
+/*
+const moto = {}
+
+Object.defineProperties(moto, {
+    rodas: {
+        set(rodas) {
+            this._rodas = rodas * 2
+        }, 
+        get() {
+            return this._rodas
+        }
+    }, 
+    capacete: {
+        set(valor) {
+            this._capacete = valor
+        }, 
+        get() {
+            return this._capacete
+        }
+    }
+})
+*/
+
+/*
+function verificarDado(dado) {
+    return Object.prototype.toString.call(dado)
+}
+
+console.log(verificarDado(12))
+*/
+
+/*
+const quadrado = {}
+Object.defineProperties(quadrado, {
+    lados: {
+        value: 4, 
+        configurable: false
+    }
+})
+
+quadrado.lados = 8
+console.log(quadrado.lados)
+*/
+
+/*
+const config = {
+    width: 800, 
+    height: 600, 
+    background: '#333'
+}
+Object.freeze(config)
+console.log(Object.isFrozen(config))
+*/
+

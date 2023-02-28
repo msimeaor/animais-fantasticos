@@ -243,14 +243,36 @@ body {
     }
 }
 
-.js-tabcontent section {
+[data-tab="content"] section {
     display: none;
 }
-.js-tabcontent section.ativo {
+section.show-down {
     display: block;
-    animation: show .7s forwards;
+    animation: show-down .7s forwards;
 }
-@keyframes show {
+section.show-right {
+    display: block;
+    animation: show-right .7s forwards;
+}
+section.show-left {
+    display: block;
+    animation: show-left .7s forwards;
+}
+section.show-up {
+    display: block;
+    animation: show-up .7s forwards;
+}
+@keyframes show-down {
+    from {
+        transform: translate3d(0, -30px, 0);
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes show-right {
     from {
         opacity: 0;
         transform: translate3d(-20px, 0, 0);
@@ -260,11 +282,31 @@ body {
         transform: translate3d(0, 0, 0);
     }
 }
+@keyframes show-left {
+    from {
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes show-up {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
 
-.js-accordion dd {
+[data-acc="accordion"] dd {
     display: none;
 }
-.js-accordion dd.ativo {
+[data-acc="accordion"] dd.ativo {
     display: block;
     animation: show-dd 1s forwards;
 }
@@ -278,20 +320,20 @@ body {
         max-height: 200px;
     }
 }
-.js-accordion dt::after {
+[data-acc="accordion"] dt::after {
     content: '🡦';
     margin-left: 10px;
 }
-.js-accordion dt.ativo::after {
+[data-acc="accordion"] dt.ativo::after {
     content: '🡤';
 }
 
-.js-scroll {
+[data-tab="scroll"] {
     opacity: 0;
     transform: translate(-30px, 0, 0);
     transition: 1s;
 }
-.js-scroll.ativo {
+[data-tab="scroll"].ativo {
     opacity: 1;
     transform: translate(0, 0, 0);
 }
