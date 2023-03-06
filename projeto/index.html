@@ -17,7 +17,16 @@
         <nav class="menu">
             <ul>
                 <li><a href="#animais">Animais</a></li>
-                <li><a href="#faq">Sobre</a></li>
+                <li data-dropdown="drop-menu">
+                    <a href="#">Sobre</a>
+                    <ul class="dropdown-menu" data-dropdown="ul-dropdown">
+                        <li><a href="#">A empresa</a></li>
+                        <li><a href="#">Equipe</a></li>
+                        <li><a href="#">Sócios</a></li>
+                        <li><a href="#">Investidores</a></li>
+                    </ul>
+                </li>
+                <li><a href="#faq">Faq</a></li>
                 <li><a href="#contato">Contato</a></li>
                 <li><a href="#" data-menu="login">Login →</a></li>
             </ul>

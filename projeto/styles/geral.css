@@ -50,7 +50,8 @@ body {
   display: block;
 
   padding: 15px;
-  margin-left: 15px;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
 
   font: bold 0.875rem monospace;
   color: #222;
