@@ -3,6 +3,10 @@
 }
 
 @media (max-width: 615px) {
+  body {
+    background: #000;
+  }
+
   [data-menu="button"] {
     display: flex;
     align-items: center;
