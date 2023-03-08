@@ -50,6 +50,8 @@
 
   .menu-lista li {
     padding: 5px 0px;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
   .menu-lista:last-child {
