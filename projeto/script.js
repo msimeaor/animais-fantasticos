@@ -5,6 +5,7 @@ import {initModal, fecharModal} from "./modulos/modal.js"
 import initTooltip from "./modulos/tooltip.js"
 import initDropdown from "./modulos/dropdown-menu.js"
 import initMenu from "./modulos/menu-mobile.js"
+import initNumeros from "./modulos/anima-numeros.js"
 
 initAnimais()
 initFaq()
@@ -14,3 +15,4 @@ fecharModal()
 initTooltip()
 initDropdown()
 initMenu()
+initNumeros()
