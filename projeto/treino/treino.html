@@ -7,18 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Treino HTML</title>
 
+  <style>
+    form {
+      max-width: 400px;
+      padding: 10px;
+    }
 
+    label {
+      display: block;
+      width: 100%;
+      margin-bottom: 3px;
+    }
+
+    input {
+      margin-bottom: 10px;
+      padding: 5px;
+      font-size: 1rem;
+    }
+  </style>
 
 </head>
 
 <body>
 
-  <section>
-    <p class="ativo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic veniam aperiam unde ullam dolor rem!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo sed iusto culpa exercitationem similique!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, sequi est exercitationem cupiditate suscipit sunt!</p>
-    <p class="ativo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi asperiores ipsum minima neque, quod qui</p>
-  </section>
+  <form class="formulario">
+    <label for="usuario">Nome</label>
+    <input type="text" name="usuario" id="usuario">
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha">
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+  </form>
 
 </body>
 
