@@ -1,34 +1,34 @@
 export default function initNumeros() {
-  
-  function animaNumero() {
-    const numeros = document.querySelectorAll('[data-especie="numero"]')
+  function iniciarContagem() {
+    const spanNumeros = document.querySelectorAll('[data-especie="numero"]')
 
-    numeros.forEach(numero => {
+    spanNumeros.forEach(numero => {
       const valorNumero = +numero.innerHTML
-      const incremento = Math.floor(valorNumero / 30)
-
+      const iterador = Math.floor(valorNumero / 30)
+      
       let start = 0
-      const timer = setInterval(() => {
-        start += incremento
+      const intervalo = setInterval(() => {
+        start += iterador
         numero.innerHTML = start
 
         if(start > valorNumero) {
-          clearInterval(timer)
+          clearInterval(intervalo)
           numero.innerHTML = valorNumero
         }
-      }, 75)
+      }, Math.random() * 100)
+
     })
   }
 
   const observador = new MutationObserver(handleMutation)
-  function handleMutation(mutation) {
-    if(mutation[0].target.classList.contains('ativo')) {
-      animaNumero()
-      observador.disconnect()
-    };
-  }
-
   const section = document.querySelector('.especies')
   observador.observe(section, {attributes: true})
+
+  function handleMutation(mutation) {
+    if(mutation[0].target.classList.contains('ativo'))  {
+      iniciarContagem()
+      observador.disconnect()
+    }
+  }
 
 }
